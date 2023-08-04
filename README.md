@@ -1,4 +1,4 @@
-![image](https://github.com/jillesca/test_nso_ce/assets/76405615/19ae1b29-62b1-49b9-a952-d602ddc45217)# test_nso_ce
+# test_nso_ce
 
 Test if NSO can be brining up by issuing the following commands:
 
