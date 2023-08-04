@@ -5,8 +5,6 @@ Test if NSO can be brining up by issuing the following commands:
 Based on https://developer.cisco.com/learning/labs/nso-intro/introduction/
 
 ```bash
-source ~/nso/ncsrc
-
 ncs-netsim --dir ~/src/netsim create-network cisco-ios-cli-3.8 2 ios
 ncs-setup --dest ~/src --netsim-dir ~/src/netsim
 ncs-netsim start
