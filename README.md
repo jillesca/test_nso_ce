@@ -2,16 +2,32 @@
 
 Test if NSO can be brining up by issuing the following commands:
 
+Based on https://developer.cisco.com/learning/labs/nso-intro/introduction/
+
 ```bash
 source ~/nso/ncsrc
 
-ncs-setup --package ~/nso/packages/neds/cisco-ios-cli-6.91/ --dest nso-instance
+ncs-netsim --dir ~/src/netsim create-network cisco-ios-cli-3.8 2 ios
+ncs-setup --dest ~/src --netsim-dir ~/src/netsim
+ncs-netsim start
 
-cd nso-instance
 ncs
 
 ncs --version
 ncs --status
-
-ncs_cli -C -u admin
 ```
+
+from inside NSO
+```bash
+ncs_cli -C -u admin
+devices sync-from
+devices device ios1 check-sync
+config
+show full-configuration devices device ios1 config | nomore
+devices device ios0 config
+ios:hostname nso.cisco.com
+top
+commit dry-run outformat native
+commit
+```
+
