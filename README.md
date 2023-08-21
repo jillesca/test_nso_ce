@@ -7,8 +7,9 @@ Based on https://developer.cisco.com/learning/labs/nso-intro/introduction/
 ```bash
 
 source $NCS_DIR/ncsrc
-ncs-netsim --dir ~/src/netsim create-network cisco-ios-cli-3.8 2 ios
-ncs-setup --dest ~/src --netsim-dir ~/src/netsim
+ncs-netsim --dir ~/example/netsim create-network cisco-ios-cli-3.8 2 ios
+ncs-setup --dest ~/example --netsim-dir ~/example/netsim
+cd ~/example/
 ncs-netsim start
 
 ncs
